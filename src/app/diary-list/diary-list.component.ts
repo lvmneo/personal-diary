@@ -7,14 +7,14 @@ import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import{AuthService} from  '../auth/auth.service'
-import { NoteListComponent } from '../Notelist/note-list.component';
+
 import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-diary-list',
   standalone: true,
-  imports: [RouterModule, CommonModule, NoteListComponent],
+  imports: [RouterModule, CommonModule, FormsModule],
   templateUrl: './diary-list.component.html',
   styleUrls: ['./diary-list.component.scss']
 })

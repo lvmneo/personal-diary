@@ -13,6 +13,9 @@
   <div *ngFor="let entry of entries" class="diary-entry">
       <div class="entry-header">
           <h3>Note</h3>
+          <div class="entry-date">
+            <small><em>{{ entry.date | date: 'short' }}</em></small>
+        </div>
           <div class="entry-actions">
               <a [routerLink]="['/edit', entry.id]" class="btn btn-secondary">Edit</a>
               <button (click)="deleteEntry(entry.id)" class="btn btn-danger">DEL</button>
@@ -28,7 +31,6 @@
                   <div *ngSwitchCase="'header'">
                       <h2>{{ block.data.text }}</h2>
                   </div>
-                  <!-- Добавьте другие типы блоков по мере необходимости -->
               </ng-container>
           </div>
       </div>
@@ -39,19 +41,37 @@
 
 
 
-<!-- Модальное окно для авторизации -->
+<!-- Форма регистрации -->
+<div class="modal" *ngIf="isRegisterModalOpen">
+  <div class="modal-content">
+    <span class="close" (click)="closeRegisterModal()">&times;</span>
+    <div class="auth-container">
+      <div class="auth-header">Register</div>
+      <form class="auth-form" (submit)="onRegister()">
+        <input type="text" placeholder="Username" [(ngModel)]="registerUsername" name="username" required>
+        <input type="password" placeholder="Password" [(ngModel)]="registerPassword" name="password" required>
+        <button type="submit" class="btn-submit">Create Account</button>
+      </form>
+      <div class="auth-footer">
+        <a (click)="switchToLogin()">Already have an account? Login</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Форма входа -->
 <div class="modal" *ngIf="isAuthModalOpen">
   <div class="modal-content">
     <span class="close" (click)="closeAuthModal()">&times;</span>
     <div class="auth-container">
       <div class="auth-header">Login</div>
       <form class="auth-form" (submit)="onSubmit()">
-        <input type="text" placeholder="Username" required>
-        <input type="password" placeholder="Password" required>
+        <input type="text" placeholder="Username" [(ngModel)]="loginUsername" name="username" required>
+        <input type="password" placeholder="Password" [(ngModel)]="loginPassword" name="password" required>
         <button type="submit" class="btn-submit">Login</button>
       </form>
       <div class="auth-footer">
-        <a routerLink="/register">Create an account</a>
+        <a (click)="switchToRegister()">Don't have an account? Register</a>
       </div>
     </div>
   </div>

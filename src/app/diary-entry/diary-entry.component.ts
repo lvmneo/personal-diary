@@ -4,7 +4,7 @@ import { DiaryService, DiaryEntry } from '../diary.service';
 import EditorJS, { OutputData } from '@editorjs/editorjs';
 import { isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID, Inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-diary-entry',
@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
 })
 export class DiaryEntryComponent implements OnInit {
   editor!: EditorJS;
-  entryId: string | null = null;  // Use string for unique ID
+  entryId: string | null = null;  
   imageUrl: string | null = null;
 
   constructor(

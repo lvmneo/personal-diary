@@ -1,13 +1,13 @@
 
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { v4 as uuidv4 } from 'uuid';  // Import UUID library for generating unique IDs
+import { v4 as uuidv4 } from 'uuid';  
 
 export interface DiaryEntry {
-  id: string;  // Add unique ID field
+  id: string; 
   title: string;
   content: any;
-  imageUrl?: string | null;  // Optional field for image URL
+  imageUrl?: string | null;  
   date:  Date;
 }
 
@@ -29,11 +29,12 @@ export class DiaryService {
 
   private saveEntries(entries: DiaryEntry[]): void {
     localStorage.setItem('diaryEntries', JSON.stringify(entries));
-    this.diaryEntries.next([...entries]);  // Update BehaviorSubject with new entries
+    this.diaryEntries.next([...entries]);  
   }
 
   addEntry(entry: DiaryEntry): void {
-    entry.id = uuidv4();  // Generate a unique ID for the new entry
+    entry.id = uuidv4();  
+    entry.date = new Date();
     const currentEntries = [...this.diaryEntries.value];
     currentEntries.unshift(entry);
     this.saveEntries(currentEntries);
