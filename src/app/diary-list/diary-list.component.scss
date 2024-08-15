@@ -33,6 +33,8 @@
         }
       }
     }
+
+  
   
     .diary-entry {
       padding: 15px;
@@ -56,11 +58,12 @@
           .btn-secondary,
           .btn-danger {
             margin-left: 10px;
-            padding: 8px 16px;
+            padding: 8px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             color: white;
+           
   
             &.btn-secondary {
               background-color: #7e98af;
@@ -80,6 +83,8 @@
           }
         }
       }
+
+      
   
       p {
         color: #555;
@@ -233,10 +238,12 @@
 .diary-entry {
   position: relative; 
 
+
   .entry-date {
     position: absolute; 
     bottom: 10px; 
     font-size: 0.85em; 
     color: gray; 
+    margin-left: 650px;
   }
 }
