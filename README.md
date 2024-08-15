@@ -1,27 +1,54 @@
 # PersonalDiary
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
+Это приложение личного дневника, разработанное на Angular, позволяет пользователям создавать, редактировать и удалять записи в дневнике. 
+Приложение также включает базовую систему аутентификации и авторизации с использованием локального хранилища браузера (`localStorage`).
 
-## Development server
+## Особенности
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Создание, редактирование и удаление записей в дневнике.
+- Отображение времени создания записи.
+- Возможность прикрепления изображений к записям.
+- Простая система аутентификации и авторизации без бэкенда, основанная на `localStorage`.
 
-## Code scaffolding
+## Установка и запуск
+### 1. Клонирование репозитория
+bash
+git clone https://github.com/yourusername/personal-diary.git
+cd personal-diary
+### 2. Установка зависимостей 
+npm install
+### 3.Сборка и запуск приложения
+npx ng serve
+Приложение будет доступно по адресу http://localhost:4200. || http://localhost:51734/
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Аутентификация и авторизация
+Приложение использует простую систему аутентификации и авторизации, основанную на localStorage.
+ При первом запуске вы можете создать новый аккаунт, который будет сохранен в локальном хранилище.
 
-## Build
+Примеры учетных записей
+Логин: user1 | Пароль: password1
+Логин: user2 | Пароль: password2
+Логин: admin | Пароль: adminpass
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Создание аккаунта
 
-## Running unit tests
+Нажмите на кнопку "Login" в правом верхнем углу страницы.
+Переключитесь на вкладку "Register".
+Введите желаемые логин и пароль, затем нажмите "Create Account".
+После успешной регистрации вы можете войти в систему с использованием только что созданных учетных данных.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Вход в аккаунт
 
-## Running end-to-end tests
+Нажмите на кнопку "Login" в правом верхнем углу страницы.
+Введите свои логин и пароль.
+Нажмите "Login" для входа.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## INFO
 
-## Further help
+Безопасность: Пожалуйста, обратите внимание, что эта система аутентификации создана только для учебных целей и не должна использоваться в реальных приложениях. Пароли сохраняются в незашифрованном виде в localStorage, что небезопасно.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Разработка: Приложение разработано с использованием Angular и является статическим SPA (Single Page Application).
+
+Зависимости: Убедитесь, что у вас установлены Node.js и Angular CLI для сборки и запуска приложения.
+
+
