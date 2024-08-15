@@ -1,0 +1,20 @@
+.note-list {
+    margin-top: 20px;
+  }
+  
+  .note {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+  
+    h3 {
+      margin-top: 0;
+    }
+  
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+    }
+  }

@@ -1,0 +1,9 @@
+<div class="diary-entry-editor">
+    <h2>{{ entryId !== null ? 'Edit Entry' : 'New Entry' }}</h2>
+    <div id="editorjs"></div>
+    <div class="image-upload">
+      <label for="imageUpload" class="btn btn-upload">Attach Image</label>
+      <input type="file" id="imageUpload" (change)="onImageUpload($event)">
+    </div>
+    <button (click)="saveEntry()" class="btn btn-success">Save Entry</button>
+  </div>

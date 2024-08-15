@@ -1,0 +1,8 @@
+<div class="note-list">
+    <h2>Saved Notes</h2>
+    <div *ngFor="let entry of entries" class="note">
+      <h3>{{ entry.title }}</h3>
+      <p [innerHTML]="entry.content"></p>
+      <img *ngIf="entry.imageUrl" [src]="entry.imageUrl" alt="Note Image">
+    </div>
+  </div>
